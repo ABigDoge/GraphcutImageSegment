@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="lsy">
+
+    <title>ImageSeg</title>
+    
+    <link href="../static/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../static/vendor/metisMenu/metisMenu.min.css" rel="stylesheet">
+    <link href="../static/vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+    <link rel='stylesheet' href='../static/css/imageseg.css' >
+    <link rel="stylesheet" href="../static/css/fileupload/jquery.fileupload.css">
+    <link rel="stylesheet" href="../static/js/otherjs/jquery-ui-1.11.0.custom/jquery-ui.css" />
+	<link rel="stylesheet" href="../static/js/otherjs/jquery-ui-1.11.0.custom/jquery-ui.structure.css" />
+	<link rel="stylesheet" href="../static/js/otherjs/colorpicker/jquery.colorpicker.css" />
+	<link rel="stylesheet" href="../static/js/otherjs/jquery-ui-1.11.0.custom/jquery-ui.theme.css" /> 
+
+    <style type="text/css">
+    .container_pencil{
+        cursor: url(../static/images/PencilToolCursor.gif), pointer;
+    }
+    </style>
+</head>
+
+<body>
+    <div id="wrapper">
+        <div id="dialog" title="Interactive Image Segment" style="font-size:20px;">
+            <div style="font: size 20px;">
+                <fieldset style="float:left;width:280px;">
+                    <legend>tools</legend>
+                    <div><span>
+                        <input type="radio" id="tools_pencil" name="tools"><label for="tools_pencil">pencil</label>
+                        <input type="radio" id="tools_rectangle" name="tools"><label for="tools_rectangle">rectangle</label>
+                    </span></div>
+
+                    <legend>operations</legend>
+                    <div><span>
+                        <button class="btn btn-default" type="button"  id="tools_process"> process </button>
+                        <button class="btn btn-default" type="button"  id="tools_undo"> undo </button>
+                    </span></div>
+
+                    <legend>line settings</legend>
+                    <h4><span class="label label-default" style="margin-top: 6px;float:left;"> width </span></h4>
+                        <select id="penWidth" >
+                            <option value="1" selected>1px</option>
+                            <option value="2">2px</option>
+                            <option value="4">4px</option>
+                            <option value="6">6px</option>
+                        </select>  
+                    <h4><span class="label label-default" style="margin-top: 6px;float:left;"> color </span></h4>
+                        <input id="colorpicker-popup" value="000000" style="width: 80px;display:none; ">
+                </fieldset>
+
+                <div style="clear:both;"></div>
+            </div>
+            <div style="position:relative;" id="container">
+                <div id="temp" style="border:1px solid rgb(58, 85, 55);width:1px;height:1px;position:absolute;display:none;"></div>
+                <canvas id="myCanvas" width="200" height="200" class="container_pencil"></canvas>
+                    <div id='imgPanel'>
+                        <div id="rawImg" class="imgBox "></div>
+                        <div id="resImg" class="imgBox "></div>
+                    </div>  
+                    <div>
+                        <a class="btn btn-primary btn-large margin_top" onclick="$(this).next().click()" style="font-size:20px;color: rgb(156, 211, 236);">choose image</a>
+                        <input type="file" name="file" style="display:none" class="btn-upload">
+                    </div>
+            </div>
+        </div>
+    </div>
+    
+	<script src="../static/js/otherjs/jquery-1.11.1.min.js"></script>
+    <script src="../static/vendor/bootstrap/js/bootstrap.min.js"></script>
+    <script src="../static/js/uploadjs/vendor/jquery.ui.widget.js"></script>
+    <script src="../static/js/uploadjs/jquery.iframe-transport.js"></script>
+    <script src="../static/js/uploadjs/jquery.fileupload.js"></script>
+    <script src="../static/vendor/metisMenu/metisMenu.min.js"></script>
+
+    <script type="text/javascript" src="../static/js/otherjs/jquery-ui-1.11.0.custom/jquery-ui.js"></script>
+	<script type="text/javascript" src="../static/js/otherjs/colorpicker/jquery.colorpicker.js"></script>
+	<script type="text/javascript" src="../static/js/otherjs/colorpicker/parts/jquery.ui.colorpicker-rgbslider.js"></script>
+    <script type="text/javascript" src="../static/js/segjs.js"></script>
+    
+</body>
+
+</html>

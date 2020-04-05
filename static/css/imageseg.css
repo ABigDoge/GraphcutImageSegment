@@ -1,0 +1,31 @@
+* {
+    font-family: 'Times New Roman';
+    font-size:15px;
+}
+
+canvas {
+    border: 2px dashed rgba(29, 51, 31, 0.671);
+}
+
+#myCanvas{
+    background:rgba(255,255,255,0);
+    position:absolute;
+    z-index:1;
+    margin-top:14px;
+    margin-left:4px;
+}
+.imgBox{
+        width: 200px;
+        height: 200px;
+        background: #699973a4;
+        border: rgb(38, 77, 37);
+        display: inline-block;
+        margin-left: 5px;
+        margin-top: 15px;
+}
+#dialog{
+    background-color: #d6c47493;
+}
+.margin_top{
+    margin-top: 20px;
+}
